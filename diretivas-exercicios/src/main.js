@@ -9,14 +9,14 @@ Vue.directive('destaque',{ //criando diretivas
 
 		let atraso = 0 //modificando diretiva
 
-		if(binding.modifiers ['atrasar']) atraso = 3000
+		if(binding.modifiers ['atrasar']) atraso = 0
 
 		setTimeout(() => {
 			if(binding.arg === 'fundo'){ //passando argumento para diretiva
 				el.style.backgroundColor = binding.value
 			}else{
 				el.style.color = binding.value
-			}
+			}  
 		}, atraso)
 
 		
