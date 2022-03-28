@@ -22,7 +22,7 @@ import FrutasMixin from "./FrutasMixin"
 import usuarioMixin from "./usuarioMixin"
 
 export default {
-	components: {Frutas} ,
+	components: {Frutas},
 	mixins: [FrutasMixin, usuarioMixin],
 	filters: { //criar filtro local
 		cpf(valor) {
@@ -37,10 +37,11 @@ export default {
 	data() {
 		return {
 			cpfDoAluno: '12345678910',
-			// frutas:'',
-        	// frutas: ['banana', 'maçã', 'laranja']
+			//  fruta:'',
+        	// frutas: ['uva']
 		}
-	},
+	}
+
 	// methods: {
     //     add() {
     //         this.frutas.push(this.fruta)

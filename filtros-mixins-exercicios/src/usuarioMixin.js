@@ -3,6 +3,5 @@ export default {
         usuarioLogado() {
             return 'Ana Maria'
          }
-    }
-    
+    }    
 }
