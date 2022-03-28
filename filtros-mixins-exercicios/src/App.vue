@@ -2,13 +2,28 @@
 	<div id="app">
 		<h1>Filtros & Mixins</h1>
 		<hr>
+		<p> {{ usuarioLogado}} </p>
 		<p> {{ cpfDoAluno | cpf | inverter}} </p>
 		<input type="text" :value="cpfDoAluno | cpf">
+		<hr>
+		<Frutas />
+		<hr>
+		<div>
+			<ul> <li v-for="fruta in frutas" :key="fruta"> {{ fruta }} </li></ul>
+			<input type="text" v-model="fruta" @keydown.enter="add">
+    	</div>
+  
 	</div>
 </template>
 
 <script>
+import Frutas from "./Frutas.vue"
+import FrutasMixin from "./FrutasMixin"
+import usuarioMixin from "./usuarioMixin"
+
 export default {
+	components: {Frutas} ,
+	mixins: [FrutasMixin, usuarioMixin],
 	filters: { //criar filtro local
 		cpf(valor) {
 			const arr = `${valor}`.split('')//quebra  string e coloca cada caractere dentro de um array
@@ -21,9 +36,17 @@ export default {
 
 	data() {
 		return {
-			cpfDoAluno: '12345678910'
+			cpfDoAluno: '12345678910',
+			// frutas:'',
+        	// frutas: ['banana', 'maçã', 'laranja']
 		}
-	}
+	},
+	// methods: {
+    //     add() {
+    //         this.frutas.push(this.fruta)
+    //         this.fruta = ''
+    //     }
+    // }
 }
 </script>
 
